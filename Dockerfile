@@ -26,3 +26,5 @@ sed -i 's/^\(production:\).*/\1 true/' /usr/local/apache2/htdocs/linshare-ui-use
 
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 COPY ./linshare-ui-user.conf /usr/local/apache2/conf/extra/linshare-ui-user.conf
+
+EXPOSE 443
