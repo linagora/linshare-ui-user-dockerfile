@@ -24,7 +24,9 @@ rm -f ui-user.tar.bz2
 RUN sed -i 's/^\(devMode:\).*/\1 false/' /usr/local/apache2/htdocs/linshare-ui-user/scripts/config.js && \
 sed -i 's/^\(production:\).*/\1 true/' /usr/local/apache2/htdocs/linshare-ui-user/scripts/config.js
 
-COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./httpd.extra.conf /usr/local/apache2/conf/extra/httpd.extra.conf
+RUN cat /usr/local/apache2/conf/extra/httpd.extra.conf >> /usr/local/apache2/conf/httpd.conf
+
 COPY ./linshare-ui-user.conf /usr/local/apache2/conf/extra/linshare-ui-user.conf
 
 EXPOSE 80
