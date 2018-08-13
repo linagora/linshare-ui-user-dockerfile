@@ -14,7 +14,7 @@ build:
       DOCKER_HOST: "tcp://docker-dind"
   script:
     - docker build .
-  except:
-    - master@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
-    - /^maintenance-.*/@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
-    - tags@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
+# only:
+#   - master@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
+#   - /^maintenance-.*/@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
+#   - tags@linagora/lgs/linshare/saas/linshare-ui-user-dockerfile
