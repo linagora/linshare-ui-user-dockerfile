@@ -7,7 +7,6 @@ ARG CHANNEL="releases"
 ARG EXT="com"
 
 ENV LINSHARE_VERSION=$VERSION
-ENV LINSHARE_SAFE_MODE=""
 
 RUN apt-get update && apt-get install wget bzip2 -y && apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
