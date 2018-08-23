@@ -23,9 +23,6 @@ RUN tar -jxf ui-user.tar.bz2 -C /usr/local/apache2/htdocs && \
 chown -R www-data /usr/local/apache2/htdocs/linshare-ui-user && \
 rm -f ui-user.tar.bz2
 
-RUN sed -i 's/^\(devMode:\).*/\1 false/' /usr/local/apache2/htdocs/linshare-ui-user/scripts/config.js && \
-sed -i 's/^\(production:\).*/\1 true/' /usr/local/apache2/htdocs/linshare-ui-user/scripts/config.js
-
 COPY ./httpd.extra.conf /usr/local/apache2/conf/extra/httpd.extra.conf
 RUN cat /usr/local/apache2/conf/extra/httpd.extra.conf >> /usr/local/apache2/conf/httpd.conf
 
