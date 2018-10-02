@@ -8,16 +8,20 @@ $ docker build --build-arg VERSION="RELEASE" --build-arg CHANNEL="releases" --bu
 
 #### How to run the container
 
-For now SSL encryption is mandatory.
-
 ```bash
 $ docker run -d \
--v $PWD/ca.pem:/usr/local/apache2/conf/server-ca.crt \
--v $PWD/localhost.pem:/usr/local/apache2/conf/server.crt \
--v $PWD/localhost.key:/usr/local/apache2/conf/server.key \
 -e EXTERNAL_URL=<wanted_FQDN> \
 -e TOMCAT_URL=<tomcat-ip> \
 -e TOMCAT_PORT=<tomcat-port>
 -p 443:443 \
 linagora/linshare-ui-user
 ```
+
+#### Options
+
+* EXTERNAL_URL : Server name (dns entry)
+* TOMCAT_URL : backend ip
+* TOMCAT_PORT : backend port
+* LOGOUT_REDIRECT_URL : At the end of the logout process, LinShare can trigger
+  an extra URL, ex SSO integration.
+* LINSHARE_THEME : a list of predefined display themes : default, darkgreen
