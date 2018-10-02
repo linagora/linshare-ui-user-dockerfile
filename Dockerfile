@@ -24,6 +24,8 @@ RUN tar -jxf ui-user.tar.bz2 -C /usr/local/apache2/htdocs && \
 chown -R www-data /usr/local/apache2/htdocs/linshare-ui-user && \
 rm -f ui-user.tar.bz2
 
+RUN apt update && apt install -y vim
+
 COPY ./httpd.extra.conf /usr/local/apache2/conf/extra/httpd.extra.conf
 RUN cat /usr/local/apache2/conf/extra/httpd.extra.conf >> /usr/local/apache2/conf/httpd.conf
 
