@@ -3,7 +3,7 @@
 #### How to build the image
 
 ```bash
-$ docker build --build-arg VERSION="RELEASE" --build-arg CHANNEL="releases" --build-arg EXT="com" -t linagora/linshare-ui-user:latest .
+$ docker build --build-arg VERSION="RELEASE" --build-arg CHANNEL="releases" -t linagora/linshare-ui-user:latest .
 ```
 
 #### How to run the container
