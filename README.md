@@ -17,7 +17,7 @@ $ docker run -d \
 linagora/linshare-ui-user
 ```
 
-#### Options by environment variables
+#### Options
 
 * EXTERNAL_URL : Server name (dns entry)
 * TOMCAT_URL : backend ip
@@ -25,8 +25,3 @@ linagora/linshare-ui-user
 * LOGOUT_REDIRECT_URL : At the end of the logout process, LinShare can trigger
   an extra URL, ex SSO integration.
 * LINSHARE_THEME : a list of predefined display themes : default, darkgreen
-
-#### Options by Apache flags variables
-
-* -D SSO : to allow AUTH-USER header to pass through.
-    `ex: command: httpd -DFOREGROUND -DSSO`
