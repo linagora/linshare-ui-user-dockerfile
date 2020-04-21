@@ -7,6 +7,7 @@ ARG CHANNEL="snapshots"
 
 ENV LINSHARE_VERSION=$VERSION
 ENV LINSHARE_THEME=default
+ENV LS_SECURE_COOKIE=TRUE
 
 RUN apt-get update && apt-get install curl bzip2 -y && apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

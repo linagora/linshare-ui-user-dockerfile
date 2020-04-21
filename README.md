@@ -25,3 +25,4 @@ linagora/linshare-ui-user
 * LOGOUT_REDIRECT_URL : At the end of the logout process, LinShare can trigger
   an extra URL, ex SSO integration.
 * LINSHARE_THEME : a list of predefined display themes : default, darkgreen
+* LS_SECURE_COOKIE : enable HttpOnly and Secure flag for session cookie. Default: TRUE
