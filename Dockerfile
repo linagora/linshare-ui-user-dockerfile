@@ -3,7 +3,7 @@ FROM httpd:2.4
 MAINTAINER LinShare <linshare@linagora.com>
 
 ARG VERSION="4.0.0"
-ARG CHANNEL="snapshots"
+ARG CHANNEL="releases"
 
 ENV LINSHARE_VERSION=$VERSION
 ENV LINSHARE_THEME=default
