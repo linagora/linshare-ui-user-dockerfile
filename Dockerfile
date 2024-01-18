@@ -18,6 +18,8 @@ RUN curl -k -s "${URL}&p=tar.bz2" -o ui-user.tar.bz2 && curl -k -s "${URL}&p=tar
   && sed -i 's#^\(.*\)#\1\tui-user.tar.bz2#' ui-user.tar.bz2.sha1 \
   && sha1sum -c ui-user.tar.bz2.sha1 --quiet && rm -f ui-user.tar.bz2.sha1
 
+RUN echo ${URL}
+
 RUN tar -jxf ui-user.tar.bz2 -C /usr/local/apache2/htdocs && \
   chown -R www-data /usr/local/apache2/htdocs/linshare-ui-user && \
   rm -f ui-user.tar.bz2
@@ -27,7 +29,7 @@ RUN cat /usr/local/apache2/conf/extra/httpd.extra.conf >> /usr/local/apache2/con
 
 COPY ./linshare-ui-user.conf /usr/local/apache2/conf/extra/linshare-ui-user.conf
 
-ENV URL="https://nexus.linagora.com/service/local/artifact/maven/content?r=linshare-snapshots&g=org.linagora.linshare&a=linshare-new-ui-user&v=${VERSION}"
+ENV URL="https://nexus.linagora.com/service/local/artifact/maven/content?r=linshare-snapshots&g=org.linagora.linshare&a=linshare-new-ui-user&v=6.2.1"
 RUN curl -k -s "${URL}&p=tar.bz2" -o new-ui-user.tar.bz2 
 
 RUN echo ${URL}
